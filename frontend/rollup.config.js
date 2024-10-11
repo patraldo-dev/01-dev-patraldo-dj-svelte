@@ -35,13 +35,14 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		file: '../my_django_svelte_app/static/frontend/bundle.js'
 	},
 	plugins: [
 		svelte({
 			compilerOptions: {
 				// enable run-time checks when not in production
-				dev: !production
+				dev: !production && livereload('../my_django_svelte_app/static/frontend'), // <-- here
+
 			}
 		}),
 		// we'll extract any component CSS out into
